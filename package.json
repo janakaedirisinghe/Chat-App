@@ -23,5 +23,10 @@
         "sass-loader": "^7.1.0",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10"
+    },
+    "dependencies": {
+        "font-awesome": "^4.7.0",
+        "laravel-echo": "^1.5.3",
+        "pusher-js": "^4.4.0"
     }
 }

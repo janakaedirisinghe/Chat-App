@@ -13,7 +13,8 @@
         "kreait/firebase-php": "4.18",
         "laravel-frontend-presets/bulma": "^2.0",
         "laravel/framework": "5.8.*",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "pusher/pusher-php-server": "~3.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
