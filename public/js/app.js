@@ -63524,8 +63524,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\chuti\Documents\laravel projects\laravel-firebase admin panel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\chuti\Documents\laravel projects\laravel-firebase admin panel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\chuti\Documents\GitHub\Chat-App\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\chuti\Documents\GitHub\Chat-App\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

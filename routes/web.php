@@ -14,7 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/insert','FirebaseController@index');Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
