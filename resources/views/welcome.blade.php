@@ -100,7 +100,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Chat-App
+                        chat-app
                     <p class="versioninfo">Version 1.1</p>
                 </div>
 
@@ -113,13 +113,16 @@
                 </div>
 
                 <div class="foundation_button_test">
-                    <p class="framwork_title">Laravel v0.7.4</p>
-                    <p class="framwork_title">Pusher v4.0.2</p>
+                    <p class="framwork_title">Laravel / pusher</p>
+                    <p class="framwork_title"></p>
 
                     <div class="block">
 
                         <a class="fa fa-github" href="https://github.com/janaka531" target="_blank"></a>
 
+                    </div>
+                    <div class="block">
+                        <a class="button is-badge-dark" >Let's Go</a>
                     </div>
                 </div>
             </div>
