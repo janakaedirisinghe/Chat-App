@@ -1,19 +1,38 @@
 <template>
-
-    <div class="panel-block field" >
+    <div class="panel-block field">
         <div class="control">
-            <input type="text" name="" class="input">
+            <input type="text" class="input" v-on:keyup.enter="sendChat" v-model="chat">
         </div>
         <div class="control auto-width">
-            <input type="button" name="" class="button" value="sent">
+            <input type="button" class="button" value="Send" v-on:click="sendChat">
         </div>
     </div>
-
 </template>
 
 <script>
     export default {
-        name: "ChatComposer"
+        props: ['chats', 'userid', 'friendid'],
+        data() {
+            return {
+                chat: ''
+            }
+        },
+        methods: {
+            sendChat: function(e) {
+                if (this.chat != '') {
+                    var data = {
+                        chat: this.chat,
+                        friend_id: this.friendid,
+                        user_id: this.userid
+                    }
+                    this.chat = '';
+
+                    axios.post('/chat/sendChat', data).then((response) => {
+                        this.chats.push(data)
+                    })
+                }
+            }
+        }
     }
 </script>
 
@@ -30,4 +49,4 @@
     .auto-width {
         width: auto;
     }
-</style>style>
+</style>

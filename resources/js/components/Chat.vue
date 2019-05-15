@@ -30,30 +30,28 @@
         align-items: center;
     }
 </style>
+
 <template>
     <div class="panel-block">
         <div class="chat" v-if="chats.length != 0">
-                <div v-for="chat in chats" style="overflow: auto;">
-                    <div class="chat-right" v-if="chat.user_id == userid">
-                        {{chat.chat}}
-                    </div>
-                    <div class="chat-left" v-else>
-                        {{chat.chat}}
-                    </div>
+            <div v-for="chat in chats" style="overflow: auto;">
+                <div class="chat-right" v-if="chat.user_id == userid">
+                    {{ chat.chat }}
                 </div>
+                <div class="chat-left" v-else>
+                    {{ chat.chat }}
+                </div>
+            </div>
         </div>
         <div v-else class="no-message">
             There are no messages
         </div>
-
-        <chat-composer></chat-composer>
-
+        <chat-composer v-bind:userid="userid" v-bind:chats="chats" v-bind:friendid="friendid"></chat-composer>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['chats','userid','friendid'],
-
+        props: ['chats', 'userid', 'friendid']
     }
 </script>

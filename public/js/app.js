@@ -1815,7 +1815,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['chats', 'userid', 'friendid']
 });
@@ -1842,10 +1841,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "ChatComposer"
+  props: ['chats', 'userid', 'friendid'],
+  data: function data() {
+    return {
+      chat: ''
+    };
+  },
+  methods: {
+    sendChat: function sendChat(e) {
+      var _this = this;
+
+      if (this.chat != '') {
+        var data = {
+          chat: this.chat,
+          friend_id: this.friendid,
+          user_id: this.userid
+        };
+        this.chat = '';
+        axios.post('/chat/sendChat', data).then(function (response) {
+          _this.chats.push(data);
+        });
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -30793,16 +30812,16 @@ var render = function() {
                 chat.user_id == _vm.userid
                   ? _c("div", { staticClass: "chat-right" }, [
                       _vm._v(
-                        "\n                    " +
+                        "\n                " +
                           _vm._s(chat.chat) +
-                          "\n                "
+                          "\n            "
                       )
                     ])
                   : _c("div", { staticClass: "chat-left" }, [
                       _vm._v(
-                        "\n                    " +
+                        "\n                " +
                           _vm._s(chat.chat) +
-                          "\n                "
+                          "\n            "
                       )
                     ])
               ])
@@ -30813,7 +30832,9 @@ var render = function() {
             _vm._v("\n        There are no messages\n    ")
           ]),
       _vm._v(" "),
-      _c("chat-composer")
+      _c("chat-composer", {
+        attrs: { userid: _vm.userid, chats: _vm.chats, friendid: _vm.friendid }
+      })
     ],
     1
   )
@@ -30840,27 +30861,50 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "panel-block field" }, [
-      _c("div", { staticClass: "control" }, [
-        _c("input", { staticClass: "input", attrs: { type: "text", name: "" } })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "control auto-width" }, [
-        _c("input", {
-          staticClass: "button",
-          attrs: { type: "button", name: "", value: "sent" }
-        })
-      ])
+  return _c("div", { staticClass: "panel-block field" }, [
+    _c("div", { staticClass: "control" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.chat,
+            expression: "chat"
+          }
+        ],
+        staticClass: "input",
+        attrs: { type: "text" },
+        domProps: { value: _vm.chat },
+        on: {
+          keyup: function($event) {
+            if (
+              !$event.type.indexOf("key") &&
+              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+            ) {
+              return null
+            }
+            return _vm.sendChat($event)
+          },
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.chat = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "control auto-width" }, [
+      _c("input", {
+        staticClass: "button",
+        attrs: { type: "button", value: "Send" },
+        on: { click: _vm.sendChat }
+      })
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
