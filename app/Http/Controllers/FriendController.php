@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Friend;
 use Illuminate\Http\Request;
+use mysql_xdevapi\Session;
 
 
 class FriendController extends Controller
@@ -37,7 +38,18 @@ class FriendController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validation
+
+        //add to database
+        $friend = new Friend;
+        $friend->user_id = Auth::user()->id;
+        $friend->friend_id = $request->friend_id;
+        $friend->save();
+
+        Session::flash('success','friends has been added');
+
+        return redirect() -> back();
+
     }
 
     /**
@@ -59,7 +71,7 @@ class FriendController extends Controller
      */
     public function edit(Friend $friend)
     {
-        //
+
     }
 
     /**
