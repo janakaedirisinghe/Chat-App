@@ -46,6 +46,8 @@
             There are no messages
         </div>
 
+        <chat-composer></chat-composer>
+
     </div>
 </template>
 
