@@ -21,6 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/users','UserListController@show')->middleware('auth');
 
+Route::get('/adduser/{id}/','UserListController@add')->middleware('auth');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Friend;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserListController extends Controller
 {
@@ -11,4 +13,13 @@ class UserListController extends Controller
         $data = User::all();
         return view('userlist')->with('users',$data);
     }
+
+    public function add($id){
+        $friend = new Friend();
+        $friend->user_id = Auth::id();
+        $friend->friend_id = $id;
+        $friend->save();
+        return redirect()->route('chat.index');
+    }
 }
+
