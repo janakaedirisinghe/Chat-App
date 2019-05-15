@@ -30707,7 +30707,7 @@ var render = function() {
           "div",
           { staticClass: "chat" },
           _vm._l(_vm.chats, function(chat) {
-            return _c("div", [
+            return _c("div", { staticStyle: { overflow: "auto" } }, [
               chat.user_id == _vm.userid
                 ? _c("div", { staticClass: "chat-right" }, [
                     _vm._v(

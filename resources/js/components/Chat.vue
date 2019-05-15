@@ -33,7 +33,7 @@
 <template>
     <div class="panel-block">
         <div class="chat" v-if="chats.length != 0">
-                <div v-for="chat in chats">
+                <div v-for="chat in chats" style="overflow: auto;">
                     <div class="chat-right" v-if="chat.user_id == userid">
                         {{chat.chat}}
                     </div>
