@@ -7,6 +7,7 @@
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <title>Laravel {{ app()->version() }}</title>
 
@@ -112,15 +113,13 @@
                 </div>
 
                 <div class="foundation_button_test">
-                    <p class="framwork_title">Bulma v0.7.4</p>
-                    <p class="framwork_title">Bulma Extension v4.0.2</p>
+                    <p class="framwork_title">Laravel v0.7.4</p>
+                    <p class="framwork_title">Pusher v4.0.2</p>
 
                     <div class="block">
-                        <a class="button is-primary">Primary</a>
-                        <a class="button is-info">Info</a>
-                        <a class="button is-success">Success</a>
-                        <a class="button is-warning">Warning</a>
-                        <a class="button is-danger">Danger</a>
+
+                        <a class="fa fa-github" href="https://github.com/janaka531" target="_blank"></a>
+
                     </div>
                 </div>
             </div>
