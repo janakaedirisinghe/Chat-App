@@ -1885,6 +1885,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['friend', 'onlineusers'],
   methods: {
@@ -41155,8 +41156,8 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "is-pulled-right" }, [
     _vm.checkUser()
-      ? _c("i", { staticClass: "fa fa-circle green" }, [_vm._v("ss")])
-      : _c("i", { staticClass: "fa fa-circle red" }, [_vm._v("fds")])
+      ? _c("i", { staticClass: "fa fa-circle green" })
+      : _c("i", { staticClass: "fa fa-circle red" })
   ])
 }
 var staticRenderFns = []

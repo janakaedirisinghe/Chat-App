@@ -1,7 +1,8 @@
 <template >
+
     <div class="is-pulled-right">
-        <i class="fa fa-circle green" v-if="checkUser()">ss</i>
-        <i class="fa fa-circle red" v-else>fds</i>
+        <i class="fa fa-circle green" v-if="checkUser()"></i>
+        <i class="fa fa-circle red" v-else></i>
     </div>
 </template>
 
