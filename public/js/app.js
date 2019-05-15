@@ -1775,11 +1775,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['chats'],
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  }
+  props: ['chats', 'userid', 'friendid']
 });
 
 /***/ }),
@@ -30016,8 +30020,41 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "panel-block" }, [
+    _vm.chats.length != 0
+      ? _c(
+          "div",
+          { staticClass: "chat" },
+          _vm._l(_vm.chats, function(chat) {
+            return _c("div", [
+              chat.user_id == _vm.userid
+                ? _c("div", { staticClass: "chat-right" }, [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(chat.chat) +
+                        "\n                "
+                    )
+                  ])
+                : _c("div", { staticClass: "chat-left" }, [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(chat.chat) +
+                        "\n                "
+                    )
+                  ])
+            ])
+          }),
+          0
+        )
+      : _c("div", [_vm._v("\n        There are no messages\n    ")])
+  ])
+}
 var staticRenderFns = []
+render._withStripped = true
 
 
 

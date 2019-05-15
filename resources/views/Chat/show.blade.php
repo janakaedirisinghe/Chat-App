@@ -12,7 +12,7 @@
                                 <a href="{{url('/chat')}}" class="is-link"><i class="fa fa-arrow-circle-leftt"></i>Back</a>
                             </div>
 
-                        <chat v-bind:chats="chats"></chat>
+                        <chat v-bind:chats="chats" v-bind:userid=" {{Auth::user()->id}} " v-bind:friendid=" {{ $friend->id  }}"> </chat>
                     </div>
                 </div>
             </div>

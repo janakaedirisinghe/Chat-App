@@ -1,7 +1,14 @@
 <template>
     <div class="panel-block">
         <div class="chat" v-if="chats.length != 0">
-                {{$chats->chat}}
+                <div v-for="chat in chats">
+                    <div class="chat-right" v-if="chat.user_id == userid">
+                        {{chat.chat}}
+                    </div>
+                    <div class="chat-left" v-else>
+                        {{chat.chat}}
+                    </div>
+                </div>
         </div>
         <div v-else>
             There are no messages
@@ -12,9 +19,7 @@
 
 <script>
     export default {
-        props: ['chats'],
-        mounted() {
-            console.log('Component mounted.')
-        }
+        props: ['chats','userid','friendid'],
+       
     }
 </script>
