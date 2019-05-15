@@ -10,6 +10,9 @@
                             <div class="contain is-pulled-right">
                                 <a href="{{url('/chat')}}" class="is-link"><i class="fa fa-arrow-circle-leftt"></i>Back</a>
                             </div>
+                        <chat>
+
+                        </chat>
                     </div>
                 </div>
             </div>
