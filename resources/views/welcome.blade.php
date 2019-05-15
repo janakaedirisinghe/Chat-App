@@ -99,16 +99,16 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
-                    <p class="versioninfo">Version {{ app()->version() }}</p>
+                    Chat-App
+                    <p class="versioninfo">Version 1.1</p>
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://laravel.com/docs">People</a>
+                    <a href="https://laracasts.com">Friends</a>
+                    <a href="https://laravel-news.com">Chat</a>
+                    <a href="https://forge.laravel.com">Online status</a>
+                    <a href="https://github.com/laravel/laravel">Add new friends</a>
                 </div>
 
                 <div class="foundation_button_test">
