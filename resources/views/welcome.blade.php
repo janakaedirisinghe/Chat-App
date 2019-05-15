@@ -100,7 +100,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                        chat-app
+                        Chat-App
                     <p class="versioninfo">Version 1.1</p>
                 </div>
 
