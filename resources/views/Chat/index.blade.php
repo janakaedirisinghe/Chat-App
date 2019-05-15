@@ -8,9 +8,9 @@
                     List of all Friends
                 </div>
                 @forelse($friends as $friend)
-                    <a href="{{route('chat.show',$friend->id)}}" class="panel-block">
+                    <a href="{{route('chat.show',$friend->id)}}" class="panel-block" style="justify-content: space-between">
                         <div>{{$friend->name}}</div>
-                        <onlineuser v-bind:friends="{{$friend}}" v-bind:onlineUsers="onlineUsers">
+                        <onlineuser v-bind:friend="{{$friend}}" v-bind:onlineUsers="onlineUsers">
 
                         </onlineuser>
                     </a>
