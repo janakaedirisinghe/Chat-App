@@ -15,8 +15,7 @@
                        $user_id = Auth::id();
                        $friend_id = $user->id;
 
-                       $yes = new \App\Friend();
-                       $yes->find('')
+                       $friend = \App\Friend::where('user_id',$user_id)
 
 
 
