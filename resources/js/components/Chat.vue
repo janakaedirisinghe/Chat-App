@@ -1,21 +1,18 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
+    <div class="panel-block">
+        <div class="chat" v-if="chats.length != 0">
 
-                    <div class="card-body">
-                       this is the chat
-                    </div>
-                </div>
-            </div>
         </div>
+        <div v-else>
+            There are no messages
+        </div>
+
     </div>
 </template>
 
 <script>
     export default {
+        props: ['chats'],
         mounted() {
             console.log('Component mounted.')
         }
