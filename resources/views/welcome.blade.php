@@ -107,9 +107,9 @@
                 <div class="links">
                     <a href="">People</a>
                     <a href="">Friends</a>
-                    <a href="https://laravel-news.com">Chat</a>
-                    <a href="https://forge.laravel.com">Online status</a>
-                    <a href="https://github.com/laravel/laravel">Add new friends</a>
+                    <a href="">Chat</a>
+                    <a href="">Online status</a>
+                    <a href="">Add new friends</a>
                 </div>
 
                 <div class="foundation_button_test">
