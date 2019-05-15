@@ -15,7 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/users','UserListController@show')->middleware('auth');
 
 Auth::routes();
 
@@ -30,3 +34,5 @@ Route::get('/chat/{id}', 'ChatController@show')->middleware('auth')->name('chat.
 Route::post('/chat/getChat/{id}', 'ChatController@getChat')->middleware('auth');
 
 Route::post('/chat/sendChat', 'ChatController@sendChat')->middleware('auth');
+
+
