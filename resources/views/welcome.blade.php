@@ -125,7 +125,7 @@
                         <a class="button is-badge-dark"  href="/chat">Let's Go</a>
                     </div>
                     <div class="block" style="padding-bottom: 0px">
-                        JP
+                        >> JP <<
                     </div>
                 </div>
             </div>
