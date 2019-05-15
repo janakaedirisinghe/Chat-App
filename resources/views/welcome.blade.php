@@ -105,8 +105,8 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">People</a>
-                    <a href="https://laracasts.com">Friends</a>
+                    <a href="">People</a>
+                    <a href="">Friends</a>
                     <a href="https://laravel-news.com">Chat</a>
                     <a href="https://forge.laravel.com">Online status</a>
                     <a href="https://github.com/laravel/laravel">Add new friends</a>
@@ -118,11 +118,11 @@
 
                     <div class="block">
 
-                        <a class="fa fa-github" href="https://github.com/janaka531" target="_blank"></a>
+                        <a class="is-large fa fa-github " href="https://github.com/janaka531" target="_blank"></a>
 
                     </div>
                     <div class="block">
-                        <a class="button is-badge-dark" >Let's Go</a>
+                        <a class="button is-badge-dark"  href="/chat">Let's Go</a>
                     </div>
                 </div>
             </div>
