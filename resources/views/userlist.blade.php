@@ -12,10 +12,27 @@
                 </div>
                 @forelse($users as $user)
                     <?php
+
                        $user_id = Auth::id();
                        $friend_id = $user->id;
 
-                       $friend = \App\Friend::where('user_id',$user_id)
+                    $yes = DB::table('friends')->where([
+                        ['user_id', '=', $user_id],
+                        ['friend_id', '=', $friend_id],
+
+                    ])->exists();
+
+                   if ($yes){
+                       continue;
+                   }
+                    $yes = DB::table('friends')->where([
+                        ['user_id', '=',$friend_id ],
+                        ['friend_id', '=',$user_id ],
+
+                    ])->exists();
+                    if ($yes){
+                        continue;
+                    }
 
 
 
