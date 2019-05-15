@@ -36,7 +36,8 @@ Vue.component('chat-composer', require('./components/ChatComposer.vue').default)
 const app = new Vue({
     el: '#app',
     data: {
-        chats: ' '
+        chats: '',
+        onlineUsers: ''
     },
     created(){
         const userId = $('meta[name="userId"]').attr('content');
@@ -53,6 +54,18 @@ const app = new Vue({
                 });
 
 
+        }
+        if (userId != 'null') {
+            Echo.join('Online')
+                .here((users) => {
+                    this.onlineUsers = users;
+                })
+                .joining((user) => {
+                    this.onlineUsers.push(user);
+                })
+                .leaving((user) => {
+                    this.onlineUsers = this.onlineUsers.filter((u) => {u != user});
+                });
         }
 
     }

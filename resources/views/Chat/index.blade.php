@@ -9,7 +9,10 @@
                 </div>
                 @forelse($friends as $friend)
                     <a href="{{route('chat.show',$friend->id)}}" class="panel-block">
-                        {{$friend->name}}
+                        <div>{{$friend->name}}</div>
+                        <onlineuser v-bind:friends="{{$friend}}" v-bind:onlineUsers="onlineUsers">
+
+                        </onlineuser>
                     </a>
 
                     @empty

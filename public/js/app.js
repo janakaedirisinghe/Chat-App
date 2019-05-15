@@ -53233,7 +53233,8 @@ Vue.component('chat-composer', __webpack_require__(/*! ./components/ChatComposer
 var app = new Vue({
   el: '#app',
   data: {
-    chats: ' '
+    chats: '',
+    onlineUsers: ''
   },
   created: function created() {
     var _this = this;
@@ -53249,6 +53250,18 @@ var app = new Vue({
         document.getElementById('ChatAudio').play();
 
         _this.chats.push(e.chat);
+      });
+    }
+
+    if (userId != 'null') {
+      Echo.join('Online').here(function (users) {
+        _this.onlineUsers = users;
+      }).joining(function (user) {
+        _this.onlineUsers.push(user);
+      }).leaving(function (user) {
+        _this.onlineUsers = _this.onlineUsers.filter(function (u) {
+          u != user;
+        });
       });
     }
   }
