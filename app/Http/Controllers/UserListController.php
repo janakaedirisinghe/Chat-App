@@ -11,6 +11,8 @@ class UserListController extends Controller
 {
     public function show(){
         $data = User::all();
+        $user_id = Auth::id();
+
         return view('userlist')->with('users',$data);
     }
 
@@ -19,6 +21,9 @@ class UserListController extends Controller
         $friend->user_id = Auth::id();
         $friend->friend_id = $id;
         $friend->save();
+
+
+
         return redirect()->route('chat.index');
     }
 }

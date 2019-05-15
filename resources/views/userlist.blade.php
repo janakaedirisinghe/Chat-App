@@ -11,13 +11,33 @@
                     List of all Users
                 </div>
                 @forelse($users as $user)
-                    <div>
-                    <a href="/adduser/{{$user->id}}" class="panel-block" style="justify-content: space-between">
-                        <div>{{$user->name}}</div>
-                        <div class="button is-success">add</div>
-                    </a>
+                    <?php
+                       $user_id = Auth::id();
+                       $friend_id = $user->id;
 
-                    </div>
+                       $yes = new \App\Friend();
+                       $yes->find('')
+
+
+
+
+                ?>
+
+
+                    @if(Auth::id() != $user->id)
+                        <div>
+                            <a href="/adduser/{{$user->id}}" class="panel-block" style="justify-content: space-between">
+                                <div>{{$user->name}}</div>
+                                <div class="button is-success">
+                                    add
+                                </div>
+                            </a>
+
+                        </div>
+                    @else
+                        @continue
+                    @endif
+
                 @empty
                     <div class="panel-block">
                         You don't have any friends
@@ -35,26 +55,4 @@
 
 
 
-<div class="container">
-
-
-   <table class="table">
-       <thead>
-       <tr>
-           <th scope="col"> Name</th>
-           <th scope="col">Action</th>
-
-       </tr>
-       </thead>
-       <tbody>
-       @foreach($users as $user)
-       <tr>
-            <td>{{$user->name}}</td>
-           <td><a href="/adduser/{{$user->id}}" class="btn btn-success">Add me</a></td>
-       </tr>
-       @endforeach
-       </tbody>
-   </table>
-
-</div>
 @endsection
