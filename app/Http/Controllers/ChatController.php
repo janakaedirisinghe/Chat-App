@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Chat;
+use App\User;
 use Auth;
-use App\Friend;
 use Illuminate\Http\Request;
-use mysql_xdevapi\Session;
 
-
-class FriendController extends Controller
+class ChatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,8 @@ class FriendController extends Controller
      */
     public function index()
     {
-
+        $friend = Auth::user()->friends();
+        return view('chat.index')->withFriends($friend);
     }
 
     /**
@@ -37,50 +38,40 @@ class FriendController extends Controller
      */
     public function store(Request $request)
     {
-        //validation
-
-        //add to database
-        $friend = new Friend;
-        $friend->user_id = Auth::user()->id;
-        $friend->friend_id = $request->friend_id;
-        $friend->save();
-
-        Session::flash('success','friends has been added');
-
-        return redirect() -> back();
-
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Friend  $friend
+     * @param  \App\Chat  $chat
      * @return \Illuminate\Http\Response
      */
-    public function show(Friend $friend)
+    public function show($id)
     {
-        //
+        $friend = User::find($id);
+        return view('chat.show')->withFriend($friend);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Friend  $friend
+     * @param  \App\Chat  $chat
      * @return \Illuminate\Http\Response
      */
-    public function edit(Friend $friend)
+    public function edit(Chat $chat)
     {
-
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Friend  $friend
+     * @param  \App\Chat  $chat
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Friend $friend)
+    public function update(Request $request, Chat $chat)
     {
         //
     }
@@ -88,10 +79,10 @@ class FriendController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Friend  $friend
+     * @param  \App\Chat  $chat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Friend $friend)
+    public function destroy(Chat $chat)
     {
         //
     }
