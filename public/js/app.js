@@ -30016,18 +30016,8 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "panel-block" }, [
-    _vm.chats.length != 0
-      ? _c("div", { staticClass: "chat" })
-      : _c("div", [_vm._v("\n        There are no messages\n    ")])
-  ])
-}
+var render = function () {}
 var staticRenderFns = []
-render._withStripped = true
 
 
 
@@ -42173,20 +42163,14 @@ module.exports = function(module) {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
-
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
@@ -42211,7 +42195,7 @@ Vue.component('chat', __webpack_require__(/*! ./components/Chat.vue */ "./resour
 var app = new Vue({
   el: '#app',
   data: {
-    chats: ''
+    chats: ' '
   },
   created: function created() {
     var _this = this;
@@ -42220,7 +42204,7 @@ var app = new Vue({
     var friendId = $('meta[name="friendId"]').attr('content');
 
     if (friendId != undefined) {
-      axios__WEBPACK_IMPORTED_MODULE_0__["AxiosInstance"].defaults('/chat/getChat/' + friendId).then(function (response) {
+      axios.post('/chat/getChat/' + friendId).then(function (response) {
         _this.chats = response.data;
       });
     }
