@@ -19,9 +19,9 @@
 
 <style lang="css">
     .red {
-        color: red;
+        color: #ff5353;
     }
     .green {
-        color: green;
+        color: #19d33a;
     }
 </style>
