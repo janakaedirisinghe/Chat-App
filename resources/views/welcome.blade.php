@@ -113,7 +113,7 @@
                 </div>
 
                 <div class="foundation_button_test">
-                    <p class="framwork_title">Laravel / pusher</p>
+                    <p class="framwork_title">Laravel / pusher / vue js</p>
                     <p class="framwork_title"></p>
 
                     <div class="block">
