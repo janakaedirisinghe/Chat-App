@@ -17,7 +17,7 @@
 {{--                    <div class="card-content">--}}
 {{--                        You are logged in!--}}
 {{--                    </div>--}}
-                    <div class="tabs is-toggle is-fullwidth is-large">
+                    <div class="tabs is-toggle is-fullwidth is-small" style="justify-content: center">
                         <ul>
                             <li >
                                 <a href="/chat">
