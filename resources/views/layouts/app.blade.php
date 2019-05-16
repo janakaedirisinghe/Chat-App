@@ -79,15 +79,15 @@
         function imageAuth(){
         if (Storage::disk('local')->has(Auth::user()->name . '-' . Auth::id(). '.jpg')){
         ?>
-        <section class="row new-post">
-            <div class="col-md-6 col-md-offset-3">
-                <img src="{{ route('account.image', ['filename' => Auth::user()->name . '-' . Auth::id() . '.jpg']) }}" alt="" class="img-responsive"  >
-            </div>
-        </section>
+        <figure class="image is-32x32">
+                <img src="{{ route('account.image', ['filename' => Auth::user()->name . '-' . Auth::id() . '.jpg']) }}" alt="" class="is-rounded"  >
+        </figure>
         <?php
         }
 
         }
+
+
 
 
         ?>
