@@ -10,10 +10,12 @@
                 @forelse($friends as $friend)
                     <a href="{{route('chat.show',$friend->id)}}" class="panel-block" style="justify-content: space-between">
 
+                            <span class="panel-icon">
+                                <?php  imageFriend($friend) ;?>
+                            </span>
 
 
-
-                        <div ><?php  imageFriend($friend) ;?> {{$friend->name}}</div>
+                        <div > {{$friend->name}}</div>
 
 
                         <onlineuser v-bind:friend="{{$friend}}" v-bind:onlineUsers="onlineUsers">
@@ -38,12 +40,12 @@
     function imageFriend($friend){
     if (Storage::disk('local')->has($friend->name . '-' . $friend->id. '.jpg')){
     ?>
-    <figure class="image is-32x32">
+    <figure class="image is-16x16">
             <img src="{{ route('account.image', ['filename' => $friend->name . '-' . $friend->id . '.jpg']) }}" alt="" class="is-rounded"  >
     </figure>
     <?php
     }else{ ?>
-    <figure class="image is-32x32">
+    <figure class="image is-16x16">
     <img src="{{ route('account.image', ['filename' => 'guest.png']) }}" alt="" class="is-rounded"  >
     </figure>
     <?php
