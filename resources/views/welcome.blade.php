@@ -127,6 +127,9 @@
                     <div class="block" style="padding-bottom: 0px">
                         >> JP <<
                     </div>
+                    <button class="button is-primary is-large is-loading
+
+"></button>
                 </div>
             </div>
         </div>
