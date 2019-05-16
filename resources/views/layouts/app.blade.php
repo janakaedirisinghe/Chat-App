@@ -35,8 +35,11 @@
                                 <a class="navbar-item " href="{{ route('login') }}">Login</a>
                                 <a class="navbar-item " href="{{ route('register') }}">Register</a>
                             @else
+
                                 <div class="navbar-item has-dropdown is-hoverable">
                                     <a class="navbar-link" href="#">{{ Auth::user()->name }}</a>
+                                    <div class="navbar-item"><?php imageAuth(); ?> </div>
+
 
                                     <div class="navbar-dropdown ">
 
@@ -65,10 +68,28 @@
                     </div>
                 </div>
             </nav>
+
             @yield('content')
         </div>
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>
+        <?php
+
+        function imageAuth(){
+        if (Storage::disk('local')->has(Auth::user()->name . '-' . Auth::id(). '.jpg')){
+        ?>
+        <section class="row new-post">
+            <div class="col-md-6 col-md-offset-3">
+                <img src="{{ route('account.image', ['filename' => Auth::user()->name . '-' . Auth::id() . '.jpg']) }}" alt="" class="img-responsive"  >
+            </div>
+        </section>
+        <?php
+        }
+
+        }
+
+
+        ?>
     </body>
 </html>
