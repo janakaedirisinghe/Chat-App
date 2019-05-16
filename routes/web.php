@@ -23,6 +23,8 @@ Route::get('/users','UserListController@show')->middleware('auth');
 
 Route::get('/adduser/{id}/','UserListController@add')->middleware('auth');
 
+Route::get('/account','UserListController@account')->middleware('auth')->name('account');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -36,5 +38,14 @@ Route::get('/chat/{id}', 'ChatController@show')->middleware('auth')->name('chat.
 Route::post('/chat/getChat/{id}', 'ChatController@getChat')->middleware('auth');
 
 Route::post('/chat/sendChat', 'ChatController@sendChat')->middleware('auth');
+
+Route::post('/updateaccount',[
+    'uses' => 'UserListController@SaveAccount',
+    'as' => 'account.save'
+]);
+Route::get('/userimage/{filename}',[
+    'uses' => 'UserListController@getUserImage',
+    'as' => 'account.image'
+]);
 
 

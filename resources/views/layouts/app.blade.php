@@ -39,15 +39,19 @@
                                     <a class="navbar-link" href="#">{{ Auth::user()->name }}</a>
 
                                     <div class="navbar-dropdown ">
-                                        <a class="navbar-item" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
+
                                         <a class="navbar-item" href="/chat">
                                             Friends
                                         </a>
                                         <a class="navbar-item" href="/users">
                                             Users
+                                        </a>
+                                        <a class="navbar-item" href="/account">
+                                            My Account
+                                        </a>
+                                        <a class="navbar-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                            Logout
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"

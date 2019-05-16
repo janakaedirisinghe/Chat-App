@@ -9,7 +9,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <title>Laravel {{ app()->version() }}</title>
+        <title>{{ config('app.name', 'Laravel') }} {{ app()->version() }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -127,9 +127,7 @@
                     <div class="block" style="padding-bottom: 0px">
                         >> JP <<
                     </div>
-                    <button class="button is-primary is-large is-loading
 
-"></button>
                 </div>
             </div>
         </div>

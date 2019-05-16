@@ -1815,6 +1815,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['chats', 'userid', 'friendid']
 });
@@ -1911,7 +1912,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.panel-block[data-v-0d66c37a] {\n    flex-direction: column;\n    border: none;\n}\n.chat[data-v-0d66c37a] {\n    width: 100%;\n    padding: 20px;\n    box-shadow: inset 0 0 20px 0 grey;\n    margin-bottom: 20px;\n    border: 1px solid grey;\n    max-height: 600px;\n    overflow-x: auto;\n}\n.chat .chat-right[data-v-0d66c37a], .chat .chat-left[data-v-0d66c37a] {\n    max-width: 70%;\n    box-shadow: 0 0 8px 0px grey;\n    padding: 8px;\n    margin: 4px;\n}\n.chat-right[data-v-0d66c37a] {\n    float: right;\n}\n.chat-left[data-v-0d66c37a] {\n    float: left;\n}\n.no-message[data-v-0d66c37a] {\n    height: 200px;\n    display: flex;\n    align-items: center;\n}\n", ""]);
+exports.push([module.i, "\n.panel-block[data-v-0d66c37a] {\n    flex-direction: column;\n    border: none;\n}\n.chat[data-v-0d66c37a] {\n    width: 100%;\n    padding: 20px;\n    box-shadow: inset 0 0 20px 0 #4a4a4a;\n    margin-bottom: 20px;\n    border: 1px solid #00b89c;\n    max-height: 600px;\n    overflow-x: auto;\n    background-color: white;\n}\n.chat .chat-right[data-v-0d66c37a], .chat .chat-left[data-v-0d66c37a] {\n    max-width: 70%;\n    box-shadow: 0 0 8px 0px #4a4a4a;\n    padding: 8px;\n    margin: 4px;\n}\n.chat-right[data-v-0d66c37a] {\n    float: right;\n}\n.chat-left[data-v-0d66c37a] {\n    float: left;\n}\n.no-message[data-v-0d66c37a] {\n    height: 200px;\n    display: flex;\n    align-items: center;\n}\n", ""]);
 
 // exports
 
@@ -1949,7 +1950,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.red {\n    color: red;\n}\n.green {\n    color: green;\n}\n", ""]);
+exports.push([module.i, "\n.red {\n    color: #ff5353;\n}\n.green {\n    color: #19d33a;\n}\n", ""]);
 
 // exports
 

@@ -6,15 +6,16 @@
     .chat {
         width: 100%;
         padding: 20px;
-        box-shadow: inset 0 0 20px 0 grey;
+        box-shadow: inset 0 0 20px 0 #4a4a4a;
         margin-bottom: 20px;
-        border: 1px solid grey;
+        border: 1px solid #00b89c;
         max-height: 600px;
         overflow-x: auto;
+        background-color: white;
     }
     .chat .chat-right, .chat .chat-left {
         max-width: 70%;
-        box-shadow: 0 0 8px 0px grey;
+        box-shadow: 0 0 8px 0px #4a4a4a;
         padding: 8px;
         margin: 4px;
     }
