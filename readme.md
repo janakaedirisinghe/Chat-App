@@ -2,7 +2,7 @@
 
 
 <br>
-<p align="center"><img src="{{ asset('image/..jpeg') }}"></p>
+<p align="center"><img src="{{ asset('image/1.jpg') }}"></p>
 
 
 # Chat-App
